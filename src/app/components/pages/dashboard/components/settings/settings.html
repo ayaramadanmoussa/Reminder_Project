@@ -1,0 +1,26 @@
+<div class="settings-page-container">
+  <div class="top-header">
+    <h1 class="page-title">Settings</h1>
+  </div>
+  <div class="settings-content">
+    <div class="settings-main-panel">
+      <div class="settings-card danger-zone">
+        <h2 class="card-title text-danger">Danger Zone</h2>
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-name">Delete account</span>
+            <span class="setting-desc">Permanently remove your data. This can't be undone.</span>
+          </div>
+          <button type="button" class="btn-delete" (click)="confirmDeleteAccount()">Delete Account</button>
+        </div>
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-name">Log Out</span>
+            <span class="setting-desc">Press on Log Out Button To End The Session !</span>
+          </div>
+          <button type="button" class="btn-delete" (click)="terminateSession()">Log Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

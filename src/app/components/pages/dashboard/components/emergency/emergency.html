@@ -1,0 +1,61 @@
+<div class="page">
+
+  <div class="header">
+    <h2>Emergency</h2>
+    <button class="bell-btn"><i class="bi bi-bell"></i></button>
+  </div>
+
+  <div class="banner-section">
+    <div class="banner">
+      <div class="banner-left">
+        <div class="banner-icon"><i class="bi bi-shield-fill-exclamation"></i></div>
+        <div>
+          <h4>In a medical emergency, call your local number immediately</h4>
+          <p>Numbers below are matched to your saved country: Egypt</p>
+        </div>
+      </div>
+      <button class="call-btn" (click)="callNumber(primaryNumber, 0)">
+        Call {{ primaryNumber }}
+      </button>
+    </div>
+
+    <p class="copied-message" *ngIf="copiedId === 0">
+      <i class="bi bi-check-circle-fill"></i> Copied to clipboard
+    </p>
+  </div>
+
+  <div class="cards">
+    <div class="card" *ngFor="let item of emergencyNumbers">
+      <div class="card-icon" [ngClass]="item.type">
+        <i class="bi {{ item.icon }}"></i>
+      </div>
+      <p>{{ item.label }}</p>
+      <h2>{{ item.number }}</h2>
+    </div>
+  </div>
+
+ <div class="contact" *ngFor="let contact of emergencyContacts; let i = index">
+
+  <div class="avatar">
+    {{ contact.contactName.charAt(0) }}
+  </div>
+
+  <div class="details">
+    <h4>{{ contact.contactName }}</h4>
+    <p>
+      {{ contact.relationship }}
+      <span>· {{ contact.phoneNumber }}</span>
+    </p>
+  </div>
+
+  <button
+    class="contact-btn"
+    (click)="callNumber(contact.phoneNumber, i + 1)">
+
+    {{ copiedId === i + 1 ? 'Copied!' : 'Call' }}
+
+  </button>
+
+</div>
+
+</div>

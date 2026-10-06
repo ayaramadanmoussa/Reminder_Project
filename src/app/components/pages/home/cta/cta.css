@@ -1,0 +1,54 @@
+.cta-section {
+  background-color: #f8fafc;
+  margin: 10% 0;
+}
+
+.cta-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.cta-card {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #6366f1 100%);
+  border-radius: 1.25rem;
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .cta-title {
+    font-size: 2.25rem;
+  }
+}
+
+.cta-description {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 34rem;
+  margin: 0 auto 2rem auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.cta-btn {
+  padding: 0.85rem 2.25rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  color: #0284c7;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.cta-btn:hover {
+  opacity: 0.95;
+}

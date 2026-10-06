@@ -1,0 +1,75 @@
+<div class="register-wrapper">
+
+
+  <!-- register section  -->
+  <div class="form-section">
+    <div class="form-card">
+      <h2>Create your account</h2>
+      <p class="form-subtitle">Start managing your care in minutes.</p>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input id="firstName" type="text" formControlName="firstName" placeholder="" />
+            @if (registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid)
+            {
+            <small class="error-text">First name is required</small>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input id="lastName" type="text" formControlName="lastName" placeholder="" />
+            @if (registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid)
+            {
+            <small class="error-text">Last name is required</small>
+            }
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input id="email" type="email" formControlName="email" placeholder="you@example.com" />
+          @if (registerForm.get('email')?.touched && registerForm.get('email')?.invalid) {
+          <small class="error-text">Please enter a valid email address</small>
+          }
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" formControlName="password" placeholder="At least 8 characters" />
+          <span class="hint">Use 8+ characters with a mix of letters and numbers.</span>
+          @if (registerForm.get('password')?.touched && registerForm.get('password')?.invalid)
+          {
+          <small class="error-text">Password must be at least 8 characters</small>
+          }
+        </div>
+
+        <!-- Checkbox -->
+        <div class="checkbox-group">
+          <input id="terms" type="checkbox" formControlName="agreeTerms" />
+          <label for="terms">
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit" [disabled]="registerForm.invalid">
+          Create Account
+        </button>
+
+        <!-- Login Link -->
+        <div class="login-footer">
+          Already have an account? <a routerLink="/auth/login">Log in</a>
+        </div>
+        <!-- // register section  -->
+
+      </form>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,117 @@
+<section class="hero-container">
+  <div class="hero-content">
+    <span class="badge">Trusted by 40,000+ patients</span>
+
+    <h1 class="hero-title">Advancing Modern Healthcare</h1>
+
+    <p class="hero-description">
+      MediCare provides a comprehensive suite of tools designed to streamline patient management, enhance clinical
+      workflows, and improve health outcomes across all care settings.
+    </p>
+
+    <div class="hero-actions">
+      @if(!user){
+      <a routerLink="/auth/register" class="btn btn-primary" style="color: white;">Create Free Account</a>
+      }
+      <a routerLink="/services" class="btn btn-secondary">Explore Services</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">312+</span>
+        <span class="stat-label">Partner Hospitals</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">4.9/5</span>
+        <span class="stat-label">Patient Rating</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">98%</span>
+        <span class="stat-label">On-Time Reminders</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual animate__animated animate__rubberBand" style="justify-content: center;">
+    <div class="schedule-card">
+      <div class="card-header">
+        <h3>Today's Medication Schedule</h3>
+        <span class="status-badge">3 Upcoming</span>
+      </div>
+
+      <div class="medication-list">
+        <div class="med-item">
+
+          <div class="med-icon" style="background-color: #E0F2FE;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_2_76)">
+                <path
+                  d="M8.75 17.0833L2.91667 11.25C2.43909 10.8918 2.04406 10.4352 1.75832 9.91106C1.47258 9.38692 1.3028 8.8075 1.26048 8.21204C1.21816 7.61657 1.30429 7.01897 1.51304 6.45969C1.72178 5.9004 2.04827 5.39251 2.47039 4.97039C2.89251 4.54827 3.4004 4.22178 3.95969 4.01304C4.51897 3.80429 5.11657 3.71816 5.71204 3.76048C6.3075 3.8028 6.88692 3.97258 7.41106 4.25832C7.9352 4.54406 8.39182 4.93909 8.75 5.41667L14.5833 11.25C15.1851 12.0524 15.4773 13.0449 15.4062 14.0454C15.3351 15.0458 14.9055 15.9871 14.1963 16.6963C13.4871 17.4055 12.5458 17.8351 11.5454 17.9062C10.5449 17.9773 9.55238 17.6851 8.75 17.0833Z"
+                  stroke="black" stroke-width="1.66667" />
+                <path d="M7.08325 7.08325L12.9166 12.9166" stroke="black" stroke-width="1.66667" />
+              </g>
+              <defs>
+                <clipPath id="clip0_2_76">
+                  <rect width="20" height="20" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="med-info">
+            <h4>Amoxicillin 500mg</h4>
+            <p>2:00 PM - 1 capsule</p>
+          </div>
+          <span class="tag active">Active</span>
+        </div>
+
+        <div class="med-item">
+          <div class="med-icon" style="background-color: #E0E7FF;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_2_76)">
+                <path
+                  d="M8.75 17.0833L2.91667 11.25C2.43909 10.8918 2.04406 10.4352 1.75832 9.91106C1.47258 9.38692 1.3028 8.8075 1.26048 8.21204C1.21816 7.61657 1.30429 7.01897 1.51304 6.45969C1.72178 5.9004 2.04827 5.39251 2.47039 4.97039C2.89251 4.54827 3.4004 4.22178 3.95969 4.01304C4.51897 3.80429 5.11657 3.71816 5.71204 3.76048C6.3075 3.8028 6.88692 3.97258 7.41106 4.25832C7.9352 4.54406 8.39182 4.93909 8.75 5.41667L14.5833 11.25C15.1851 12.0524 15.4773 13.0449 15.4062 14.0454C15.3351 15.0458 14.9055 15.9871 14.1963 16.6963C13.4871 17.4055 12.5458 17.8351 11.5454 17.9062C10.5449 17.9773 9.55238 17.6851 8.75 17.0833Z"
+                  stroke="black" stroke-width="1.66667" />
+                <path d="M7.08325 7.08325L12.9166 12.9166" stroke="black" stroke-width="1.66667" />
+              </g>
+              <defs>
+                <clipPath id="clip0_2_76">
+                  <rect width="20" height="20" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="med-info">
+            <h4>Metformin 850mg</h4>
+            <p>6:00 PM - 1 tablet</p>
+          </div>
+          <span class="tag due-soon">Due Soon</span>
+        </div>
+
+        <div class="med-item">
+          <div class="med-icon" style="background-color: #D1FAE5;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_2_76)">
+                <path
+                  d="M8.75 17.0833L2.91667 11.25C2.43909 10.8918 2.04406 10.4352 1.75832 9.91106C1.47258 9.38692 1.3028 8.8075 1.26048 8.21204C1.21816 7.61657 1.30429 7.01897 1.51304 6.45969C1.72178 5.9004 2.04827 5.39251 2.47039 4.97039C2.89251 4.54827 3.4004 4.22178 3.95969 4.01304C4.51897 3.80429 5.11657 3.71816 5.71204 3.76048C6.3075 3.8028 6.88692 3.97258 7.41106 4.25832C7.9352 4.54406 8.39182 4.93909 8.75 5.41667L14.5833 11.25C15.1851 12.0524 15.4773 13.0449 15.4062 14.0454C15.3351 15.0458 14.9055 15.9871 14.1963 16.6963C13.4871 17.4055 12.5458 17.8351 11.5454 17.9062C10.5449 17.9773 9.55238 17.6851 8.75 17.0833Z"
+                  stroke="black" stroke-width="1.66667" />
+                <path d="M7.08325 7.08325L12.9166 12.9166" stroke="black" stroke-width="1.66667" />
+              </g>
+              <defs>
+                <clipPath id="clip0_2_76">
+                  <rect width="20" height="20" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div class="med-info">
+            <h4>Atorvastatin 20mg</h4>
+            <p>9:00 PM - 1 tablet</p>
+          </div>
+          <span class="tag scheduled">Scheduled</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

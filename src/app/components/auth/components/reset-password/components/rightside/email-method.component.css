@@ -1,0 +1,79 @@
+* {
+    text-decoration: none;
+    color: black;
+}
+
+.right {
+    width: 50vw;
+}
+
+.right a {
+    position: relative;
+}
+
+.right main a {
+    margin-bottom: 24px;
+}
+
+.right main .info {
+    margin-top: 20.57px;
+}
+
+.right main .info h1 {
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.right main .info p {
+    font-size: 16px;
+    color: #475569;
+}
+
+.right form {
+    gap: 8.01px;
+}
+
+.right .inputEmail {
+    height: 45px;
+    padding: 12px !important;
+    border-radius: 12px;
+    border: 2px solid #E2E8F0;
+    transition: .6s ease all;
+    outline: none;
+}
+
+.right label {
+    font-weight: 600;
+}
+
+.right .inputEmail:focus {
+    border: 2px solid rgb(130, 175, 233);
+}
+
+.right .inputEmail:hover {
+    transform: translateX(10px);
+
+}
+
+.right form button {
+    color: white;
+    margin-top: 23.99px;
+    padding: 14px 28px;
+    border-radius: 40px;
+    background: #0EA5E9;
+}
+
+.right form button:hover {
+
+    background: rgba(14, 164, 233, 0.616);
+}
+
+main .forgetting {
+    margin-top: 23.99px;
+}
+
+@media screen and (max-width:874px) {
+    .right {
+        width: 100vw;
+    }
+}

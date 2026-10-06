@@ -1,0 +1,97 @@
+<div class="notification-page">
+
+  <!-- Header -->
+  <div class="page-header">
+    <h2>Notifications</h2>
+
+    <button class="notification-button">
+      <i class="bi bi-bell"></i>
+    </button>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="notification-toolbar">
+
+    <div class="filter-buttons">
+
+      <button class="filter" [class.active]="selectedFilter === 'All'" (click)="selectFilter('All')">
+        All
+      </button>
+
+      <button class="filter" [class.active]="selectedFilter === 'Unread'" (click)="selectFilter('Unread')">
+        Unread
+      </button>
+
+      <button class="filter" [class.active]="selectedFilter === 'Reminders'" (click)="selectFilter('Reminders')">
+        Reminders
+      </button>
+
+      <button class="filter" [class.active]="selectedFilter === 'Appointments'" (click)="selectFilter('Appointments')">
+        Appointments
+      </button>
+
+    </div>
+
+  <div class="toolbar-actions">
+    <button
+      class="mark-read"
+      (click)="markAllAsRead()">
+      Mark all as read
+    </button>
+
+
+  <button
+    class="dismiss-btn"
+    (click)="dismissAll()">
+    Dismiss all
+  </button>
+ </div>
+
+  </div>
+
+  <!-- Notification List -->
+  <div class="notification-list">
+
+    <div *ngFor="let notification of filteredNotifications" class="notification-item"
+      [class.unread]="!notification.read">
+
+      <!-- Icons, titles and time-->
+      <div class="notification-left">
+
+        <div class="notification-icon" [ngClass]="notification.type">
+
+          <i class="bi" [ngClass]="{
+              'bi-capsule': notification.type === 'reminder',
+              'bi-exclamation-triangle': notification.type === 'alert',
+              'bi-check': notification.type === 'appointment',
+              'bi-bell': notification.type === 'missed'
+            }">
+          </i>
+
+        </div>
+
+        <div class="notification-content">
+          <h5>{{ notification.title }}</h5>
+          <p>{{ notification.time }}</p>
+        </div>
+
+      </div>
+
+      <!-- Right -->
+      <div class="notification-right">
+
+
+        <div class="title-row">
+
+
+          <span class="notification-tag" [ngClass]="notification.type">
+            {{ notification.type | titlecase }}
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

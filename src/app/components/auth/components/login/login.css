@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #0F172A;
+}
+
+a {
+  text-decoration: none;
+}
+
+.login-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.right-panel {
+  flex: 1;
+  background: #F8FAFC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  width: 50vw;
+}
+
+.right-panel h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.right-panel p {
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+form {
+  max-width: 360px;
+  width: 100%;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 380px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: .2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #0EA5E9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, .15);
+}
+
+.error {
+  display: block;
+  margin-top: 6px;
+  color: #EF4444;
+  font-size: 12px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 25px 0;
+  font-size: 13px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.options a,
+.signup a {
+  color: #0EA5E9;
+  font-weight: 600;
+}
+
+.options a:hover,
+.signup a:hover {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 999px;
+  background: #0EA5E9;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+
+button:hover:not(:disabled) {
+  opacity: .9;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.signup {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 860px) {
+
+  .login-page {
+    flex-direction: column;
+  }
+
+  footer {
+    display: none;
+  }
+
+  .right-panel {
+    align-items: center;
+  }
+
+  form {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width:874px) {
+  .right-panel {
+    width: 100vw !important;
+  }
+}

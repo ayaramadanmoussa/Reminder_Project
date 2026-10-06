@@ -1,0 +1,52 @@
+<section class="d-flex">
+    <div class="w-50 vh-100 d-flex flex-column justify-content-between left">
+        <header class="d-flex align-items-center" style="gap: 8px;">
+            <svg width="35.99" height="35.99" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="35.9943" height="35.9943" rx="8" fill="white" fill-opacity="0.15" />
+                <path d="M17.99 10.4915V25.4891M10.4912 17.9903H25.4888" stroke="white" stroke-width="1.65" />
+            </svg>
+            <p class="m-0 logoTitle">
+                MediCare
+            </p>
+        </header>
+
+        <main>
+            <!-- Your account, always <br> within reach -->
+            <h2 class="fw-bold">{{data.title}}</h2>
+            <p>{{data.desc}}
+            </p>
+            <div class="card bodyCard">
+                <div class="card-body d-flex align-items-center gap-3 bodyCard">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="20" fill="white" fill-opacity="0.15" />
+                        <g clip-path="url(#clip0_112_15)">
+                            <path
+                                d="M25.2422 19.2432H14.7439C13.9156 19.2432 13.2441 19.9146 13.2441 20.7429V25.2422C13.2441 26.0705 13.9156 26.742 14.7439 26.742H25.2422C26.0705 26.742 26.742 26.0705 26.742 25.2422V20.7429C26.742 19.9146 26.0705 19.2432 25.2422 19.2432Z"
+                                stroke="white" stroke-width="1.5" />
+                            <path
+                                d="M16.2432 19.2431V16.2435C16.2432 15.2491 16.6382 14.2955 17.3413 13.5923C18.0445 12.8892 18.9982 12.4941 19.9926 12.4941C20.987 12.4941 21.9407 12.8892 22.6438 13.5923C23.347 14.2955 23.742 15.2491 23.742 16.2435V19.2431"
+                                stroke="white" stroke-width="1.5" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_112_15">
+                                <rect width="17.9972" height="17.9972" fill="white"
+                                    transform="translate(10.9941 10.9944)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="details">
+                        <h3>{{data.headCard}}</h3>
+                        <p>{{data.descCard}}</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 MediCare Health Technologies Inc.</p>
+        </footer>
+    </div>
+    <router-outlet></router-outlet>
+
+
+</section>

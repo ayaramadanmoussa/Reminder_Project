@@ -1,0 +1,290 @@
+.profile-page {
+    width: 84.06vw;
+
+}
+
+.profile-top {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.firstLetter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.firstLetter .content {
+    background-color: #1297cb;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 50%;
+    text-transform: capitalize;
+    font-size: 40px;
+    font-weight: bold;
+    border: 1px solid black;
+    color: white;
+    overflow: hidden;
+}
+
+.profile-card {
+    flex: 1;
+}
+
+.profile-info {
+    flex: 2;
+}
+
+.profile-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 40px 30px;
+    width: 420px;
+    border: 1px solid #e7edf4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+    text-align: center;
+}
+
+.profile-card h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.patient-id {
+    margin-top: 12px;
+    color: #6b7280;
+    font-size: 16px;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.badges span {
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.verified {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.premium {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.profile-info {
+    background: #fff;
+    border: 1px solid #e7edf4;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+}
+
+.profile-info h3 {
+    margin-bottom: 30px;
+    color: #1f2937;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input {
+    padding: 14px 16px;
+    border: 1px solid #dbe4ee;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #f9fbfd;
+    outline: none;
+}
+
+.save-btn {
+    margin-top: 30px;
+    background: #18a8e1;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.save-btn:hover {
+    background: #0f98cf;
+}
+
+.emergency-card {
+
+    margin-top: 40px;
+    background: #fff;
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid #e5edf5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+
+}
+
+.card-header {
+
+    margin-bottom: 25px;
+
+}
+
+.card-header h3 {
+
+    color: #1f2937;
+    font-size: 24px;
+
+}
+
+.contact-form {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+
+}
+
+.contact-form label {
+
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+
+}
+
+.contact-form input[type=text] {
+
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d9e3ee;
+    border-radius: 10px;
+    outline: none;
+
+}
+
+.checkbox {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+
+}
+
+table {
+
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+thead {
+
+    background: #18a8e1;
+    color: white;
+
+}
+
+th,
+td {
+
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #edf2f7;
+
+}
+
+.status {
+
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+
+}
+
+.active {
+
+    background: #dcfce7;
+    color: #16a34a;
+
+}
+
+.inactive {
+
+    background: #fee2e2;
+    color: #dc2626;
+
+}
+
+.update-btn {
+
+    background: #18a8e1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+
+}
+
+.delete-btn {
+
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.update-btn:hover {
+
+    background: #1297cb;
+
+}
+
+.delete-btn:hover {
+
+    background: #dc2626;
+
+}

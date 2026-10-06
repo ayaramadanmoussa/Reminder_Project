@@ -1,0 +1,17 @@
+<!--HIDE NAVBAR IN LOGIN PAGE AND RESET PAGE AND REGISTER PAGE-->
+@if(!(hideNavFootLocations.find((c)=> c === getRoute))){
+<app-navbar />
+}
+
+<router-outlet></router-outlet>
+
+<!--WANT TO TEST ?  --- TEST HERE-->
+
+<!-- <app-categories></app-categories> -->
+
+<!--=======================================-->
+
+
+@if(!(hideNavFootLocations.find((c)=> c === getRoute))){
+<app-footer />
+}

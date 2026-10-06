@@ -1,0 +1,229 @@
+<div class="medicines-container">
+
+    <!-- Header -->
+    <header class="page-header">
+        <h1 class="page-title">Medicines</h1>
+
+        <button class="icon-btn" aria-label="Notifications">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Layout Container -->
+    <div class="content-layout">
+
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+            <div class="filter-card">
+
+                <!-- Category -->
+                <div class="filter-group">
+                    <h3 class="filter-label">Category</h3>
+                    <div class="chips-container">
+                        <button class="chip" [class.active]="selectedCategory === 'All'"
+                            (click)="selectedCategory = 'All'">All</button>
+
+                        @for (cat of categories; track $index) {
+                        <button class="chip" [class.active]="selectedCategory === cat.name"
+                            (click)="selectedCategory = cat.name">
+                            {{ cat.name }}
+                        </button>
+                        }
+
+                        @if (categories.length === 0) {
+                        <span class="no-categories-text">No categories added yet</span>
+                        }
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <div class="filter-group">
+                    <h3 class="filter-label">Status</h3>
+                    <div class="chips-container">
+                        <button class="chip" [class.active]="selectedStatus === 'All'"
+                            (click)="selectedStatus = 'All'">All</button>
+                        <button class="chip" [class.active]="selectedStatus === 'Active'"
+                            (click)="selectedStatus = 'Active'">Active</button>
+                        <button class="chip" [class.active]="selectedStatus === 'Due Soon'"
+                            (click)="selectedStatus = 'Due Soon'">Due Soon</button>
+                        <button class="chip" [class.active]="selectedStatus === 'Completed'"
+                            (click)="selectedStatus = 'Completed'">Completed</button>
+                    </div>
+                </div>
+
+                <!-- Frequency -->
+                <div class="filter-group">
+                    <h3 class="filter-label">Frequency</h3>
+                    <div class="chips-container">
+                        <button class="chip" [class.active]="selectedFrequency === 'All'"
+                            (click)="selectedFrequency = 'All'">All</button>
+                        <button class="chip" [class.active]="selectedFrequency === '1x daily'"
+                            (click)="selectedFrequency = '1x daily'">1x daily</button>
+                        <button class="chip" [class.active]="selectedFrequency === '2x daily'"
+                            (click)="selectedFrequency = '2x daily'">2x daily</button>
+                        <button class="chip" [class.active]="selectedFrequency === '3x daily'"
+                            (click)="selectedFrequency = '3x daily'">3x daily</button>
+                    </div>
+                </div>
+
+                <!-- Clear filters -->
+                <div class="clear-filters-wrapper">
+                    <button class="clear-btn" (click)="clearFilters()">Clear filters</button>
+                </div>
+
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="medicines-main">
+
+            <!-- Action Bar -->
+            <div class="main-header-actions">
+                <div class="search-box">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" placeholder="Search medicines..." [(ngModel)]="searchQuery"
+                        class="search-input" />
+                </div>
+
+                <button class="add-medicine-btn" routerLink="/dashboard/create-medicine">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>Add Medicine</span>
+                </button>
+            </div>
+
+            <!-- Medicines Grid -->
+            <div class="medicines-grid">
+                @for (med of getFilteredMedicines(); track med.name) {
+                <div class="med-card">
+                    <div class="med-card-header">
+                        <div class="icon-wrapper bg-blue">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7"
+                                stroke-width="2">
+                                <path d="M10.5 20.5l10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7z"></path>
+                                <line x1="8.5" y1="8.5" x2="15.5" y2="15.5"></line>
+                            </svg>
+                        </div>
+
+                        <div class="med-info">
+                            <h3 class="med-name">{{ med.name }} <span class="med-dose">{{ med.dose }}</span></h3>
+                            <span class="med-category">{{ med.category }}</span>
+                        </div>
+
+                        <span class="status-badge" [class.status-active]="getMedicineStatus(med) === 'Active'"
+                            [class.status-completed]="getMedicineStatus(med) === 'Completed'"
+                            [class.status-missed]="getMedicineStatus(med) === 'Missed'">
+                            {{ getMedicineStatus(med) }}
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Dosage</span>
+                        <span class="info-value">{{ med.dosage }}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Frequency</span>
+                        <span class="info-value">{{ med.frequency }}</span>
+                    </div>
+
+                    <div class="med-card-actions">
+                        <button class="btn-outline" (click)="openDetails(med)">Details</button>
+
+                        <button class="btn-primary"
+                            [disabled]="((med.dosesTakenToday || 0) + (med.dosesMissedToday || 0)) >= getDailyTarget(med.frequency)"
+                            (click)="markAsTaken(med)">
+                            {{ ((med.dosesTakenToday || 0) + (med.dosesMissedToday || 0)) >=
+                            getDailyTarget(med.frequency) ? 'Completed' : 'Mark Taken' }}
+                        </button>
+                    </div>
+                </div>
+                } @empty {
+                <div class="no-data-msg">
+                    <p>No medicines found matching your filters.</p>
+                </div>
+                }
+            </div>
+
+            <!-- Pagination Control -->
+            <div class="pagination-container">
+                <button class="page-arrow" disabled>&lsaquo;</button>
+                <button class="page-num active">1</button>
+                <button class="page-num">2</button>
+                <button class="page-num">3</button>
+                <button class="page-arrow">&rsaquo;</button>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Modal Component -->
+    @if (selectedMedicine) {
+    <div class="modal-overlay" (click)="closeDetails()">
+        <div class="modal-card" (click)="$event.stopPropagation()">
+            <div class="modal-header">
+                <div class="med-info">
+                    <h2>{{ selectedMedicine.name }}</h2>
+                    <span class="med-category">{{ selectedMedicine.category }}</span>
+                </div>
+                <button class="close-btn" (click)="closeDetails()">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="detail-row">
+                    <span class="label">Dosage:</span>
+                    <span class="value">{{ selectedMedicine.dosage || '1 capsule' }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Frequency:</span>
+                    <span class="value">{{ selectedMedicine.frequency || '3x daily' }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Today Progress:</span>
+                    <span class="value font-bold">
+                        {{ selectedMedicine.dosesTakenToday || 0 }} Taken / {{ selectedMedicine.dosesMissedToday || 0 }}
+                        Missed
+                    </span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Next Dose:</span>
+                    <span class="value font-bold">{{ selectedMedicine.nextDose || 'Not set' }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Status:</span>
+                    <span class="value">{{ getMedicineStatus(selectedMedicine) }}</span>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button class="btn-outline btn-danger" (click)="deleteMedicine(selectedMedicine)">
+                    Delete
+                </button>
+
+                <div class="modal-actions-right">
+                    <button class="btn-outline btn-warning"
+                        [disabled]="((selectedMedicine.dosesTakenToday || 0) + (selectedMedicine.dosesMissedToday || 0)) >= getDailyTarget(selectedMedicine.frequency)"
+                        (click)="markAsMissed(selectedMedicine)">
+                        Mark Missed
+                    </button>
+
+                    <button class="btn-outline" (click)="closeDetails()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+
+</div>

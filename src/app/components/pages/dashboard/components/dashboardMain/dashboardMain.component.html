@@ -1,0 +1,150 @@
+<main>
+    <div class="top-bar">
+        <h1>Good afternoon, {{user.name}}</h1>
+        <!-- <button (click)="getMedicines()">test</button> -->
+    </div>
+    <div class="page-content">
+        <section class="cards">
+            <div class="stat-card" routerLink="/dashboard/medicines">
+                <div class="stat-icon">
+
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="42.9915" height="42.9915" rx="11.5" fill="#E0F2FE" />
+                        <rect x="0.5" y="0.5" width="42.9915" height="42.9915" rx="11.5" />
+                        <path
+                            d="M20.7385 29.072L14.9052 23.2386C14.4276 22.8805 14.0326 22.4238 13.7468 21.8997C13.4611 21.3756 13.2913 20.7962 13.249 20.2007C13.2067 19.6052 13.2928 19.0076 13.5016 18.4483C13.7103 17.8891 14.0368 17.3812 14.4589 16.959C14.881 16.5369 15.3889 16.2104 15.9482 16.0017C16.5075 15.7929 17.1051 15.7068 17.7006 15.7491C18.296 15.7914 18.8754 15.9612 19.3996 16.247C19.9237 16.5327 20.3803 16.9277 20.7385 17.4053L26.5719 23.2386C27.1736 24.041 27.4658 25.0336 27.3947 26.034C27.3236 27.0345 26.894 27.9757 26.1848 28.6849C25.4756 29.3941 24.5344 29.8237 23.5339 29.8948C22.5334 29.9659 21.5409 29.6738 20.7385 29.072Z"
+                            stroke="black" stroke-width="1.66667" />
+                        <path d="M19.0718 19.072L24.9051 24.9053" stroke="black" stroke-width="1.66667" />
+                    </svg>
+
+                </div>
+                <p class="stat-value">{{totalMedicines}}</p>
+                <div class="details">
+                    <p>Total Medicines</p>
+                    <p style="color: #16A34A;">+{{medicineAdded}}</p>
+                </div>
+            </div>
+            <div class="stat-card" routerLink="/dashboard/categories">
+                <div class="stat-icon">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="43.9915" height="43.9915" rx="12" fill="#E0E7FF" />
+                        <path
+                            d="M19.4885 14.4886H16.1552C15.2347 14.4886 14.4885 15.2348 14.4885 16.1553V19.4886C14.4885 20.4091 15.2347 21.1553 16.1552 21.1553H19.4885C20.409 21.1553 21.1552 20.4091 21.1552 19.4886V16.1553C21.1552 15.2348 20.409 14.4886 19.4885 14.4886Z"
+                            stroke="black" stroke-width="1.66667" />
+                        <path
+                            d="M27.8218 14.4886H24.4884C23.568 14.4886 22.8218 15.2348 22.8218 16.1553V19.4886C22.8218 20.4091 23.568 21.1553 24.4884 21.1553H27.8218C28.7423 21.1553 29.4884 20.4091 29.4884 19.4886V16.1553C29.4884 15.2348 28.7423 14.4886 27.8218 14.4886Z"
+                            stroke="black" stroke-width="1.66667" />
+                        <path
+                            d="M19.4885 22.822H16.1552C15.2347 22.822 14.4885 23.5682 14.4885 24.4887V27.822C14.4885 28.7425 15.2347 29.4887 16.1552 29.4887H19.4885C20.409 29.4887 21.1552 28.7425 21.1552 27.822V24.4887C21.1552 23.5682 20.409 22.822 19.4885 22.822Z"
+                            stroke="black" stroke-width="1.66667" />
+                        <path
+                            d="M27.8218 22.822H24.4884C23.568 22.822 22.8218 23.5682 22.8218 24.4887V27.822C22.8218 28.7425 23.568 29.4887 24.4884 29.4887H27.8218C28.7423 29.4887 29.4884 28.7425 29.4884 27.822V24.4887C29.4884 23.5682 28.7423 22.822 27.8218 22.822Z"
+                            stroke="black" stroke-width="1.66667" />
+                    </svg>
+                </div>
+                <p class="stat-value">{{totalCategories}}</p>
+                <div class="details">
+                    <p>Total Categories</p>
+                    <p style="color: #16A34A;">+{{categoryAdded}}</p>
+                </div>
+            </div>
+
+        </section>
+        <section class="medications">
+            <header>
+                <h1>On Active Medications</h1>
+                <a routerLink="/dashboard/medicines" class="viewall">View all →</a>
+            </header>
+            <div class="cards">
+                @for(medi of getAllAcitve() | slice:0:3; track medi.name)
+                {
+                <div class="entity-card">
+                    <div class="entity-header">
+                        <div class="entity-identity">
+
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="43.9915" height="43.9915" rx="12" fill="#E0F2FE" />
+                                <path
+                                    d="M20.7385 29.072L14.9052 23.2386C14.4276 22.8805 14.0326 22.4238 13.7468 21.8997C13.4611 21.3756 13.2913 20.7962 13.249 20.2007C13.2067 19.6052 13.2928 19.0076 13.5016 18.4483C13.7103 17.8891 14.0368 17.3812 14.4589 16.959C14.881 16.5369 15.3889 16.2104 15.9482 16.0017C16.5075 15.7929 17.1051 15.7068 17.7006 15.7491C18.296 15.7914 18.8754 15.9612 19.3996 16.247C19.9237 16.5327 20.3803 16.9277 20.7385 17.4053L26.5719 23.2386C27.1736 24.041 27.4658 25.0336 27.3947 26.034C27.3236 27.0345 26.894 27.9757 26.1848 28.6849C25.4756 29.3941 24.5344 29.8237 23.5339 29.8948C22.5334 29.9659 21.5409 29.6738 20.7385 29.072Z"
+                                    stroke="black" stroke-width="1.66667" />
+                                <path d="M19.0718 19.072L24.9051 24.9053" stroke="black" stroke-width="1.66667" />
+                            </svg>
+
+                            <div class="entity-details">
+                                <h1>{{medi.name}}</h1>
+                                <h3>{{medi.info}}</h3>
+                            </div>
+                        </div>
+                        @if(medi.status === 'Active'){
+                        <div class="badge">
+                            <p>{{medi.status}}</p>
+                        </div>
+                        }@else{
+                        <div class="badge" style="background-color: #E2E8F0; color:#475569;">
+                            <p>{{medi.status}}</p>
+                        </div>
+                        }
+
+                    </div>
+                    <div class="entity-meta">
+                        <div class="meta">
+                            <p>Dosage</p>
+                            <p>{{medi.dosage}} capsule</p>
+                        </div>
+                        <div class="meta">
+                            <p>Frequency</p>
+                            <p>{{medi.frequency}}x daily</p>
+                        </div>
+                        <div class="meta">
+                            <p>Next dose</p>
+                            <p>{{medi.nextDose}}</p>
+                        </div>
+                        <div class="meta">
+                            <p>Prescribed by</p>
+                            <p>{{medi.prescribedBy}}</p>
+                        </div>
+                    </div>
+                    <div class="entity-actions">
+                        <div class="med-card-actions">
+                            <button class="btn-primary" routerLink="/dashboard/medicines">Go To Medicines</button>
+                        </div>
+                    </div>
+                </div>
+                }@empty{
+                <h1 class=" notfound">No Medicines Have Found</h1>
+                }
+
+            </div>
+        </section>
+        <div class="d-flex justify-content-between">
+            <section class="another">
+                <header>
+                    <h1>Recent Notifications</h1>
+                    <a routerLinkActive="router-link-active" class="viewall">View all</a>
+                </header>
+                <div class="notificationCard d-flex align-items-center">
+
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#0EA5E9" />
+                        <path
+                            d="M19.0006 25.6646L14.3355 20.9996C13.9536 20.7131 13.6377 20.348 13.4092 19.9288C13.1807 19.5096 13.0449 19.0463 13.0111 18.5701C12.9772 18.0939 13.0461 17.616 13.213 17.1687C13.38 16.7214 13.6411 16.3152 13.9786 15.9777C14.3162 15.6401 14.7224 15.379 15.1697 15.2121C15.6169 15.0451 16.0948 14.9762 16.571 15.0101C17.0473 15.0439 17.5106 15.1797 17.9298 15.4082C18.3489 15.6367 18.7141 15.9526 19.0006 16.3346L23.6656 20.9996C24.1468 21.6413 24.3805 22.435 24.3236 23.2351C24.2668 24.0352 23.9232 24.7879 23.356 25.3551C22.7889 25.9222 22.0361 26.2658 21.2361 26.3226C20.436 26.3795 19.6422 26.1458 19.0006 25.6646Z"
+                            stroke="black" stroke-width="1.33333" />
+                        <path d="M17.6675 17.6675L22.3325 22.3325" stroke="black" stroke-width="1.33333" />
+                    </svg>
+                    <h1>Lorem ipsum dolor sit, amet c</h1>
+                </div>
+                <div class="notificationCard d-flex align-items-center" style="background-color: white;">
+
+
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="#DCFCE7" />
+                        <path d="M25.3316 16.0015L18.0009 23.3322L14.6687 20" stroke="black" stroke-width="1.33333" />
+                    </svg>
+
+                    <h1>Lorem ipsum dolor sit, amet c</h1>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>

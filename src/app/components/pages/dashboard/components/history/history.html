@@ -1,0 +1,80 @@
+<div class="history-page">
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1 class="page-title">History</h1>
+    <button class="icon-btn" aria-label="Notifications">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Period Filter + Export -->
+  <div class="toolbar">
+    <div class="period-tabs">
+      <button class="period-tab" [class.active]="selectedPeriod === 'week'"   (click)="setPeriod('week')">This week</button>
+      <button class="period-tab" [class.active]="selectedPeriod === 'month'"  (click)="setPeriod('month')">This month</button>
+      <button class="period-tab" [class.active]="selectedPeriod === 'all'"    (click)="setPeriod('all')">All time</button>
+    </div>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-value green">{{ dosesTaken }}</span>
+      <span class="stat-label">Doses Taken</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value red">{{ dosesMissed }}</span>
+      <span class="stat-label">Doses Missed</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value dark">{{ adherenceRate }}%</span>
+      <span class="stat-label">Adherence Rate</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value dark">{{ dayStreak }}</span>
+      <span class="stat-label">Day Streak</span>
+    </div>
+  </div>
+
+  <!-- History Table -->
+  <div class="table-wrapper">
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>Medicine</th>
+          <th>Category</th>
+          <th>Scheduled</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (record of filteredHistory; track $index) {
+          <tr>
+            <td class="medicine-name">{{ record.medicine }}</td>
+            <td class="category-name">{{ record.category }}</td>
+            <td class="scheduled-time">{{ record.scheduled }}</td>
+            <td>
+              <span class="status-badge"
+                [class.taken]="record.status === 'Taken'"
+                [class.missed]="record.status === 'Missed'"
+                [class.skipped]="record.status === 'Skipped'">
+                <span class="dot"></span>
+                {{ record.status }}
+              </span>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4" class="empty-row">No history records for this period.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+</div>

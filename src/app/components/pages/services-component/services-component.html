@@ -1,0 +1,60 @@
+<section class="hero">
+
+  <p class="section-title">Our Services</p>
+
+  <h1>Services built around your care</h1>
+
+  <p class="hero-text">
+    From daily medication tracking to emergency response,
+    every MediCare tool works together to keep you and your
+    care team aligned.
+  </p>
+
+</section>
+
+<section class="services">
+ 
+  <div class="card" *ngFor="let service of services">
+    <div class="icon" [ngClass]="service.color">
+      <i [class]="service.icon"></i>
+     
+    </div>
+
+    <div class="content">
+
+      <h3>{{ service.title }}</h3>
+
+      <p>{{ service.description }}</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="support">
+
+  <div class="support-left">
+
+    <div class="support-icon">
+        <i class="fa-solid fa-user"></i>
+    </div>
+
+    <div class="support-text">
+
+      <h2>Need personalized support?</h2>
+
+      <p>
+        Our care team is here to help you get the most out of MediCare.
+      </p>
+
+    </div>
+
+  </div>
+
+  <a routerLink="/contact-us" class="support-btn">
+  <i class="fa-solid fa-headset"></i>
+  Contact Support
+</a>
+
+</section>

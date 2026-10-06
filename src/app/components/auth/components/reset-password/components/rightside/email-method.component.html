@@ -1,0 +1,33 @@
+<div class="vh-100 right bg-white d-flex flex-column align-items-center justify-content-center">
+    <main class="d-flex flex-column ">
+        <a routerLink="/auth/login">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path d="M5.60837 0.471436L0.943359 5.13645L5.60837 9.80145M0.943359 5.13645H10.2734" stroke="#475569"
+                    stroke-width="1.33333" />
+            </svg> Back to log in
+        </a>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+            <rect width="43.9915" height="43.9915" rx="12" fill="#E0F2FE" />
+            <path
+                d="M28.4023 21.0725H15.5756C14.5636 21.0725 13.7432 21.8929 13.7432 22.9049V28.4021C13.7432 29.4141 14.5636 30.2344 15.5756 30.2344H28.4023C29.4143 30.2344 30.2346 29.4141 30.2346 28.4021V22.9049C30.2346 21.8929 29.4143 21.0725 28.4023 21.0725Z"
+                stroke="#0EA5E9" stroke-width="1.83333" />
+            <path
+                d="M17.4072 21.0724V17.4076C17.4072 16.1927 17.8899 15.0275 18.749 14.1684C19.6081 13.3093 20.7732 12.8267 21.9882 12.8267C23.2031 12.8267 24.3683 13.3093 25.2274 14.1684C26.0865 15.0275 26.5692 16.1927 26.5692 17.4076V21.0724"
+                stroke="#0EA5E9" stroke-width="1.83333" />
+        </svg>
+
+        <div class="info">
+            <h1>Forgot your password?</h1>
+            <p>Enter the email linked to your account and we'll send <br> you a link to reset it.</p>
+        </div>
+
+        <form action="" class="d-flex flex-column">
+            <label for="email">Email address</label>
+            <input class="inputEmail" id="email" type="email" placeholder="you@example.com">
+            <button class="btn btn-primary">Send Reset Link</button>
+        </form>
+        <p class="text-center forgetting">Remembered your password? <a routerLink="/auth/login"
+                style="color: #0EA5E9; font-weight: 600;">Log in</a></p>
+    </main>
+</div>
